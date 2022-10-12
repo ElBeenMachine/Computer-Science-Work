@@ -49,7 +49,6 @@ module.exports = class Tree {
     // Function to remove an item from the tree
     remove(item) {
         let current_node = this.start;
-        console.log(current_node);
         let previous = null;
 
         while(current_node != null && current_node.data != item) {
@@ -84,7 +83,7 @@ module.exports = class Tree {
                 let right_node = current_node.right_pointer;
                 if(right_node.left_pointer != null) {
                     let smallest = current_node.right_pointer;
-                    while(right_node.left_pointer != null) {
+                    while(smallest.left_pointer != null) {
                         previous = smallest;
                         smallest = smallest.left_pointer;
                     }
