@@ -98,16 +98,30 @@ module.exports = class Tree {
         }
     }
 
-    // Function to traverse the tree
-    traverse(current_node) {
+    // Function to inorder traverse the tree
+    inorder(current_node) {
         if(current_node != null) {
-            if(current_node.left_pointer != null) {
-                this.traverse(current_node.left_pointer)
-            }
+            if(current_node.left_pointer != null) this.inorder(current_node.left_pointer);
             console.log(current_node.data);
-            if(current_node.right_pointer != null) {
-                this.traverse(current_node.right_pointer);
-            }
+            if(current_node.right_pointer != null) this.inorder(current_node.right_pointer);
+        }
+    }
+
+    // Function to preorder traverse the tree
+    preorder(current_node) {
+        if(current_node != null) {
+            console.log(current_node.data);
+            if(current_node.left_pointer != null) this.preorder(current_node.left_pointer);
+            if(current_node.right_pointer != null) this.preorder(current_node.right_pointer);
+        }
+    }
+
+    // Function to postorder traverse the tree
+    postorder(current_node) {
+        if(current_node != null) {
+            if(current_node.left_pointer != null) this.postorder(current_node.left_pointer);
+            if(current_node.right_pointer != null) this.postorder(current_node.right_pointer);
+            console.log(current_node.data);
         }
     }
 }

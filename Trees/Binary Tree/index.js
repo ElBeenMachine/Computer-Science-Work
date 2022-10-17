@@ -7,16 +7,12 @@ function main() {
         bt.add(item);
     });
 
-    console.log("========================");
-    bt.remove("G");
-    bt.traverse(bt.start);
-    console.log("========================");
-    bt.add("K");
-    bt.traverse(bt.start);
-    console.log("========================");
-    bt.remove("E");
-    bt.traverse(bt.start);
-    console.log("========================");
+    console.log("===== Inorder Traversal: =====");
+    bt.inorder(bt.start);
+    console.log("===== Preorder Traversal: =====");
+    bt.preorder(bt.start);
+    console.log("===== Postorder Traversal: =====");
+    bt.postorder(bt.start);
 }
 
 main()
